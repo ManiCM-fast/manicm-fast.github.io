@@ -2,7 +2,7 @@
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="description" content="ManiCM: Real-time 3D Diffusion Policy via Consistency Model for Robotic Manipulation">
-  <meta name="keywords" content="Robotics, Mobile Manipulation, Bimanual Manipulation">
+  <meta name="keywords" content="Robotics, Mobile Manipulation, Consistency Model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ManiCM</title>
 
@@ -24,30 +24,6 @@
 
   <link rel="icon" href="./files/icon.jpg">
 
-  <meta property="og:site_name" content="Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation">
-  <meta property="og:type" content="video.other">
-  <meta property="og:title" content="Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation">
-  <meta property="og:description" content="by Zipeng Fu*, Tony Z. Zhao* and Chelsea Finn at Stanford">
-  <meta property="og:url" content="https://mobile-aloha.github.io/">
-  <meta property="og:image" content="https://mobile-aloha.github.io/static/images/preview.gif">
-  <meta property="og:image:secure" content="https://mobile-aloha.github.io/static/images/preview.gif">
-  <meta property="og:video" content="">
-  <meta property="og:video:secure" content="">
-  <meta property="og:image:width" content="1280">
-  <meta property="og:image:height" content="720">
-
-  <meta property="article:publisher" content="https://mobile-aloha.github.io">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation">
-  <meta name="twitter:description" content="by Zipeng Fu*, Tony Z. Zhao* and Chelsea Finn at Stanford">
-  <meta name="twitter:url" content="https://mobile-aloha.github.io/">
-  <meta name="twitter:image" content="https://mobile-aloha.github.io/static/images/preview.gif">
-  <meta name="twitter:site" content="@zipengfu">
-  <meta name="twitter:card" content="player">
-  <meta name="twitter:player" content="">
-  <meta name="twitter:player:width" content="1280">
-  <meta name="twitter:player:height" content="720">
-
   <script src="./files/iframe_api"></script>
 </head>
 
@@ -63,16 +39,15 @@
             <span class="author-block">
               <a href="https://guanxinglu.github.io/">Guanxing Lu</a><sup>1</sup>*&nbsp;&nbsp;&nbsp;
               <a>Zifeng Gao</a><sup>2</sup>*&nbsp;&nbsp;&nbsp;
-              <a href="https://tianxingchen.github.io">Tianxing Chen</a><sup>3</sup>&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/Dai-Wenxun">Wenxun Dai</a><sup>3</sup>&nbsp;&nbsp;&nbsp;<br>
-              <a href="https://ziweiwangthu.github.io/">Ziwei Wang</a><sup>4</sup>&nbsp;&nbsp;&nbsp;and&nbsp;&nbsp;
+              <a href="https://tianxingchen.github.io">Tianxing Chen</a><sup>2</sup>&nbsp;&nbsp;&nbsp;
+              <a href="https://github.com/Dai-Wenxun">Wenxun Dai</a><sup>2</sup>&nbsp;&nbsp;&nbsp;<br>
+              <a href="https://ziweiwangthu.github.io/">Ziwei Wang</a><sup>3</sup>&nbsp;&nbsp;&nbsp;and&nbsp;&nbsp;
               <a href="https://andytang15.github.io/">Yansong Tang</a><sup>1†</sup>
             </span>
             <span class="author-block">
               <sup>1</sup>Tsinghua Shenzhen International Graduate School, Tsinghua University<br>
-              <sup>2</sup>Harbin Institute of Technology, Shenzhen<br>
-              <sup>3</sup>Shanghai AI Laboratory
-              <sup>4</sup>Carnegie Mellon University
+              <sup>2</sup>Shanghai AI Laboratory
+              <sup>3</sup>Carnegie Mellon University
             </span>
             <p style="font-size: medium; margin-top: 5px;"><sup>*</sup>Equal Contributions, <sup>†</sup>Corresponding author</p>
           </div>
@@ -84,20 +59,20 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                <a href="https://arxiv.org/pdf/2406.01586" class="external-link button is-normal is-rounded is-dark" target="_blank">
                   <span class="icon">
                       <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
                   </span>
-                  <span>Paper (Coming soon)</span>
+                  <span>Paper</span>
                 </a>
               </span>
               <!-- arXiv Link. -->
               <span class="link-block">
-                <a href="" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                <a href="https://arxiv.org/abs/2406.01586" class="external-link button is-normal is-rounded is-dark" target="_blank">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv (Coming soon)</span>
+                  <span>arXiv</span>
                 </a>
               </span>
               <!-- Code Link. -->
