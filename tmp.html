@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>32 MP4 Videos in Grid</title>
+<style>
+  .video-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8列 */
+    grid-template-rows: repeat(4, auto); /* 4行，每行的高度根据内容自动调整 */
+    gap: 10px; /* 网格项之间的间隙 */
+    width: 100%; /* 容器宽度 */
+    margin: auto; /* 居中显示 */
+  }
+  .video-item {
+    width: 100%; /* 视频宽度 */
+    height: auto; /* 视频高度自适应 */
+  }
+</style>
+</head>
+<body>
+
+<div class="video-container">
+  <!-- 32个视频标签 -->
+  <video class="video-item" controls>
+    <source src="videos/1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <video class="video-item" controls>
+    <source src="videos/2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  
+  <!-- ... 以下是自动生成的剩余视频标签 ... -->
+  <video class="video-item" controls>
+    <source src="videos/32.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+</body>
+<script>
+  // 使用JavaScript动态生成剩余的视频标签
+  var container = document.querySelector('.video-container');
+  for (var i = 5; i <= 31; i++) {
+    var video = document.createElement('video');
+    video.className = 'video-item';
+    video.setAttribute('controls', '');
+
+    var source = document.createElement('source');
+    source.src = 'videos/' + i + '.mp4';
+    source.type = 'video/mp4';
+
+    video.appendChild(source);
+    video.innerHTML += 'Your browser does not support the video tag.';
+
+    container.appendChild(video);
+  }
+</script>
+</html>
